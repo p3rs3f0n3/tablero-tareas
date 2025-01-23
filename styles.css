@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.column {
+    background-color: #fff;
+    border: 2px dashed #ccc;
+    padding: 20px;
+    width: 200px;
+    min-height: 300px;
+    border-radius: 10px;
+}
+
+.task {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: grab;
+    border-radius: 5px;
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.column h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.column:hover {
+    background-color: #f0f8ff;
+}
+
+.add-task {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.add-task input {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-task button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-task button:hover {
+    background-color: #218838;
+}
+
+.bulk-upload {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bulk-upload input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.bulk-upload button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.bulk-upload button:hover {
+    background-color: #0056b3;
+}

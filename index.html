@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tablero de Tareas</h1>
+    <div class="container">
+
+        <div class="add-task">
+            <input type="text" id="new-task" placeholder="Nueva tarea...">
+            <button onclick="addNewTask()">Agregar Tarea</button>
+        </div> 
+
+
+        <!-- Lista de tareas pendientes -->
+        <div class="column" id="tareas-pendientes">
+            <h3>Tareas Pendientes</h3>
+        </div>
+
+        <!-- Ingenieros a los que se pueden asignar tareas -->
+        <div class="column" id="ing1">
+            <h3>Jose Ignacio Villadiego</h3>
+        </div>
+        <div class="column" id="ing2">
+            <h3>Javier Herrera</h3>
+        </div>
+        <div class="column" id="ing3">
+            <h3>Andrés Felipe Pelaez</h3>
+        </div>
+        <div class="column" id="ing3">
+            <h3>Yairi Valencia</h3>
+        </div>
+
+    </div>
+
+    <div>
+        <br>
+
+        <div class="bulk-upload">
+            <input type="file" id="taskFile" accept=".txt,.csv">
+            <button onclick="handleFileUpload()">Cargar Tareas</button>
+        </div>
+                
+        <br>
+        <br>
+        <button onclick="clearTasks()">Limpiar Tablero</button>
+    </div>  
+
+    <script src="script.js"></script>
+</body>
+</html>
