@@ -76,17 +76,18 @@ function addDragEvents(task) {
     });
 }
 
-// Función para guardar tareas en localStorage
+// Función para guardar todas las columnas dinámicamente
 function saveTasks() {
     const taskData = {};
 
-    columns.forEach(column => {
-        const tasks = Array.from(column.querySelectorAll('.task'));
-        taskData[column.id] = tasks.map(task => task.innerText);
+    document.querySelectorAll('.column').forEach(column => {
+        const tasks = Array.from(column.querySelectorAll('.task')).map(task => task.innerText);
+        taskData[column.id] = tasks;
     });
 
     localStorage.setItem('tableroTareas', JSON.stringify(taskData));
 }
+
 
 // Función para cargar tareas desde localStorage
 function loadTasks() {
@@ -96,7 +97,18 @@ function loadTasks() {
         const taskData = JSON.parse(savedTasks);
 
         for (const columnId in taskData) {
-            const column = document.getElementById(columnId);
+            let column = document.getElementById(columnId);
+
+            // Si la columna no existe, la creamos dinámicamente
+            if (!column) {
+                column = document.createElement('div');
+                column.className = 'column';
+                column.id = columnId;
+                column.innerHTML = `<h3>${columnId.replace('ing', 'Ing ')}</h3>`;
+                document.querySelector('.container').appendChild(column);
+            }
+
+            // Agregar las tareas de localStorage
             taskData[columnId].forEach(taskText => {
                 const newTask = document.createElement('div');
                 newTask.className = 'task';
